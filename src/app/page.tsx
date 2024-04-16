@@ -1,11 +1,10 @@
+import Projectcard from "@/components/projects/Projectcard";
 import Image from "next/image";
-
+import { projectArray } from "@/assets/projects/projectarray";
 export default function Home() {
   return (
-    <main className="w-full m-2 p-2 overflow-hidden" >
-     <div className="text-left w-9 ">
-      Priyansh Chauhan 
-     </div>
+    <main className="flex flex-col justify-center items-center h-screen">
+      
     </main>
   );
 }
