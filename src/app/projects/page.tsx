@@ -6,8 +6,8 @@ import { projectArray } from "@/assets/projects/projectarray";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 const page = () => {
   return (
-    <div className=" lg:max-w-[70%] lg:m-auto min-h-max overflow-hidden 	">
-      <div className=" text-[100px] text-center flex flex-row justify-center item-center 	">
+    <div className=" lg:max-w-[70%] lg:m-auto min-h-max overflow-hidden pt-8	">
+      <div className=" text-3xl md:text-[100px] text-center flex flex-row justify-center item-center 	">
         Projects
         <Link
           rel="noopener noreferrer"
