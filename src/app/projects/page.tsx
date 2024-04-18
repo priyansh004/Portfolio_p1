@@ -16,6 +16,7 @@ const page = () => {
         >
           <GitHubLogoIcon height={50} width={50}/>
         </Link>
+        
       </div>
       <div className="flex pl-4 pr-4 flex-col pb-7 md:pb-0">
         <div className="mt-6 grid place-items-center grid-cols-1 md:grid-cols-2 gap-8 ">

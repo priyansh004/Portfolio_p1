@@ -40,33 +40,11 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-slate-300">
+    <nav className="bg-[#3F5CB0]">
       <div className="z-50 lg:sticky max-w-[95%] m-auto lg:top-0">
         <div className="flex flex-row justify-between p-6">
           <div className="text-3xl"> Priyansh Chauhan</div>
-          <div className="hidden md:flex  flex-row justify-center gap-3 ">
-            <Link
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://github.com/priyansh004"
-            >
-              <TwitterLogoIcon height={50} width={50} />
-            </Link>
-            <Link
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://github.com/priyansh004"
-            >
-              <GitHubLogoIcon height={50} width={50} />
-            </Link>
-            <Link
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://github.com/priyansh004"
-            >
-              <LinkedInLogoIcon height={50} width={50} />
-            </Link>
-          </div>
+
           <div>
             <Button asChild className="h-full p-1 ">
               <Link href="/contact" className="px-2">
@@ -75,32 +53,31 @@ const Navbar = () => {
             </Button>
           </div>
         </div>
-        <section className="fixed left-0 top-1/2 transform -translate-y-1/2   backdrop-blur-lg bg-slate-300 flex self-center border-2 rounded-2xl border-slate-600 ml-2 	">
-          <div className=" p-1 ">
-            {navbarItems.map((item, index) => {
-              const isActive =
-                (pathname.includes(item.href) && item.href.length > 1) ||
-                pathname === item.href;
-              return (
-                <div className="m-1">
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={` flex ${
-                      isActive && "border-l-4 border-black animate-pulse"
-                    } p-2`}
-                  >
-                    <Image
-                      src={item.icon}
-                      alt={item.name}
-                      height={45}
-                      width={45}
-                    ></Image>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
+        <section className="w-[500px] fixed bottom-4 left-1/2 transform -translate-x-1/2 backdrop-blur-lg bg-[#2D4484] flex flex-row justify-evenly border-2 rounded-xl border-slate-600">
+          {navbarItems.map((item, index) => {
+            const isActive =
+              (pathname.includes(item.href) && item.href.length > 1) ||
+              pathname === item.href;
+            return (
+              <div className="m-1 ">
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={` flex ${
+                    isActive && "border-b-4 border-black animate-pulse"
+                  } p-2 flex flex-row`}
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.name}
+                    height={45}
+                    width={45}
+                  ></Image>
+                  <h2 className="pl-1 self-center">{item.name}</h2>
+                </Link>
+              </div>
+            );
+          })}
         </section>
       </div>
     </nav>
