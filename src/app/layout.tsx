@@ -18,16 +18,19 @@ const fontSans = FontSans({
 const fontRoboto = FontRoboto({
   subsets: ["latin"],
   variable: "--font-roboto",
+  weight: "400", // Specify the weight for Roboto
 });
 
 const fontOpenSans = FontOpenSans({
   subsets: ["latin"],
   variable: "--font-open-sans",
+  weight: "400", // Specify the weight for Open Sans
 });
 
 const fontLato = FontLato({
   subsets: ["latin"],
   variable: "--font-lato",
+  weight: "400", // Specify the weight for Lato
 });
 
 // Metadata for the application
@@ -39,9 +42,9 @@ export const metadata: Metadata = {
 // RootLayout component
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" className={cn(fontOpenSans.variable, fontRoboto.variable, fontLato.variable)}>
       <body className={cn(
@@ -49,12 +52,7 @@ export default function RootLayout({
         fontSans.variable // Apply Inter font (fontSans) to body
       )}>
         <Navbar />
-        {React.cloneElement(children, {
-          fontSans: fontSans.variable,
-          fontRoboto: fontRoboto.variable,
-          fontOpenSans: fontOpenSans.variable,
-          fontLato: fontLato.variable,
-        })}
+        {children}
       </body>
     </html>
   );

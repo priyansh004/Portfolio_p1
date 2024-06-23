@@ -8,7 +8,7 @@ interface CardProps {
   item: {
     name: string;
     image: string | StaticImageData;
-    hostedLink: string;
+    hostedLink?: string;
     githubLink: string;
     stack: string;
     description: string;
@@ -19,7 +19,7 @@ interface CardProps {
 
 const Projectcard: React.FC<CardProps> = ({ item, index }) => {
   return (
-    <div className="flex flex-col p-4 border-4	border-zinc-400	rounded-lg bg-slate-300	">
+    <div className="flex flex-col p-4 border-4	border-zinc-400	rounded-lg bg-slate-300 transform-gpu	">
       <div>
         <Image
           src={item.image}
