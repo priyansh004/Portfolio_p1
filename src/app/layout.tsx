@@ -8,7 +8,7 @@ import React from 'react';
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/shared/Navbar";
-
+import { Analytics } from "@vercel/analytics/react"
 // Configure each font
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -53,6 +53,8 @@ export default function RootLayout({
       )}>
         <Navbar />
         {children}
+        <Analytics />
+
       </body>
     </html>
   );
